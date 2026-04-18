@@ -48,9 +48,9 @@ If the current browser does not support Grid Lanes, those options are disabled.
 
 ## Project structure
 
-```index.html
-style.css
-script.js```
+- `index.html`
+- `style.css`
+- `script.js`
 
 ## Notes
 
