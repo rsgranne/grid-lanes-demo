@@ -51,8 +51,8 @@ If the current browser does not support Grid Lanes, those options are disabled.
 ## Project structure
 
 - `index.html`
-- `main.css`
-- `main.js`
+- `style.css`
+- `script.js`
 
 ## Notes
 
