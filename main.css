@@ -1,34 +1,3 @@
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	padding: 20px;
-}
-
-.gallery-wrap {
-	max-width: 100%;
-}
-
-.gallery {
-	width: min(1200px, 100%);
-}
-
-/* Shared item styling */
-
-.gallery > figure {
-	position: relative;
-	margin: 0 0 16px;
-	break-inside: avoid;
-}
-
-.gallery > figure > img {
-	display: block;
-	width: 100%;
-	height: auto;
-}
-
 /* 1. Standard grid */
 
 .gallery.grid {
@@ -161,13 +130,39 @@ body {
 /* cosmetic stuff below here */
 /*****************************/
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	font-size: 24px;
 	font-family: "Iowan Old Style", Georgia, serif;
 }
 
 body {
+	margin: 0;
+	padding: 20px;
 	font-family: system-ui, sans-serif;
+}
+
+.gallery-wrap {
+	max-width: 100%;
+}
+
+.gallery {
+	width: min(1200px, 100%);
+}
+
+.gallery > figure {
+	position: relative;
+	margin: 0 0 16px;
+	break-inside: avoid;
+}
+
+.gallery > figure > img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .controls {
