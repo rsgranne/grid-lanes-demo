@@ -50,6 +50,85 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /*
+    The code display area under the layout picker.
+
+    This shows the key CSS lines for whichever layout is currently selected,
+    so students can see exactly which properties drive the layout.
+  */
+  const codeDisplay = document.querySelector(".key-css code");
+
+  /*
+    Key CSS snippets for each layout mode.
+
+    These are intentionally minimal — only the lines that explain
+    what makes each layout work, not the full CSS.
+  */
+  const keyCSSSnippets = {
+    "grid":
+`display: grid;
+grid-template-columns: repeat(4, 1fr);`,
+
+    "multicol":
+`columns: 4 200px;
+figure { display: inline-block; }`,
+
+    "lanes-columns":
+`display: grid-lanes;
+grid-template-columns: repeat(4, 1fr);`,
+
+    "lanes-alt":
+`display: grid-lanes;
+grid-template-columns: 0.75fr 1.35fr 0.75fr 1.35fr;`,
+
+    "lanes-rows":
+`display: grid-lanes;
+grid-template-rows: repeat(3, 150px);
+overflow-x: auto;`,
+
+    "lanes-rows-wide":
+`display: grid-lanes;
+grid-template-rows: repeat(3, 150px);
+overflow-x: auto;`
+  };
+
+  /*
+    Extra notes that appear below the code snippet for certain modes.
+
+    Most modes do not need a note, so only the ones that do are listed here.
+  */
+  const keyCSSNotes = {
+    "lanes-rows-wide": "Uses a second image set with wider proportions"
+  };
+
+  /*
+    Update the key CSS display to match the currently selected mode.
+  */
+  function updateKeyCSSDisplay(mode) {
+    if (codeDisplay) {
+      codeDisplay.textContent = keyCSSSnippets[mode] || "";
+    }
+
+    /*
+      If there is already a note element, update or remove it.
+      If there is no note element but we need one, create it.
+    */
+    const controls = document.querySelector(".controls");
+    let noteEl = controls.querySelector(".key-css-note");
+    const noteText = keyCSSNotes[mode];
+
+    if (noteText) {
+      if (!noteEl) {
+        noteEl = document.createElement("p");
+        noteEl.className = "key-css-note";
+        controls.appendChild(noteEl);
+      }
+      noteEl.textContent = noteText;
+    } else if (noteEl) {
+      noteEl.remove();
+    }
+  }
+
+  /*
     All possible layout classes that can be applied to the gallery.
 
     When the user changes layouts, we remove all of these classes first,
@@ -347,6 +426,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       applyImageSet(defaultImageSources);
     }
+
+    // Show the key CSS lines for this layout
+    updateKeyCSSDisplay(mode);
   }
 
   /*
@@ -379,9 +461,9 @@ document.addEventListener("DOMContentLoaded", () => {
       switch back to Grid
   */
   if (supportsGridLanes) {
-    browserNote.textContent = `${browserLabel} supports Grid Lanes.`;
+    browserNote.textContent = `${browserLabel} can use Grid Lanes.`;
   } else {
-    browserNote.textContent = `${browserLabel} does not support Grid Lanes, so those options are disabled.`;
+    browserNote.textContent = `${browserLabel} cannot use Grid Lanes, so those options are disabled.`;
 
     Array.from(select.options).forEach((option) => {
       if (gridLanesModes.includes(option.value)) {

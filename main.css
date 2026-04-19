@@ -22,6 +22,27 @@ select {
   padding: 6px 10px;
 }
 
+/* Key CSS lines shown under the layout picker */
+
+.key-css {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  background: hsl(220 15% 95%);
+  border: 1px solid hsl(220 10% 82%);
+  border-radius: 6px;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.key-css-note {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: hsl(220 10% 45%);
+}
+
 .gallery-wrap {
   max-width: 100%;
 }
