@@ -98,6 +98,9 @@ overflow-x: auto;`
   */
   const keyCSSNotes = {
     "grid": "Each row is as tall as its tallest image, so shorter images leave empty space below them.",
+    "multicol": "Images flow top to bottom in each column, then wrap to the next column.",
+    "lanes-columns": "Like multi-column, but images pack tightly without the empty space that Grid creates.",
+    "lanes-alt": "Alternating narrow & wide columns add visual variety while still packing tightly.",
     "lanes-rows": "These images are tall & narrow, so they look cramped at this height. Compare with the next option to see how image proportions affect the layout.",
     "lanes-rows-wide": "These images come from a second set with wider proportions"
   };
