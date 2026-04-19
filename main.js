@@ -101,11 +101,29 @@ overflow-x: auto;`
   };
 
   /*
+    Track whether the viewport is below the narrow-screen breakpoint.
+
+    matchMedia lets us check a CSS media query from JavaScript.
+    When the screen is narrow, all layouts collapse to single-column,
+    so the key CSS snippet should reflect that instead of showing
+    the normal layout-specific CSS.
+  */
+  const narrowQuery = window.matchMedia("(width < 992px)");
+
+  /*
     Update the key CSS display to match the currently selected mode.
+
+    If the screen is narrow, show the single-column override instead
+    of the layout-specific snippet, since that is what is actually
+    happening at this width.
   */
   function updateKeyCSSDisplay(mode) {
     if (codeDisplay) {
-      codeDisplay.textContent = keyCSSSnippets[mode] || "";
+      if (narrowQuery.matches) {
+        codeDisplay.textContent = ".gallery { display: block; }";
+      } else {
+        codeDisplay.textContent = keyCSSSnippets[mode] || "";
+      }
     }
 
     /*
@@ -127,6 +145,14 @@ overflow-x: auto;`
       noteEl.remove();
     }
   }
+
+  /*
+    When the viewport crosses the 992px breakpoint (e.g., rotating a phone
+    or resizing a browser window), update the snippet to match.
+  */
+  narrowQuery.addEventListener("change", () => {
+    updateKeyCSSDisplay(select.value);
+  });
 
   /*
     All possible layout classes that can be applied to the gallery.
