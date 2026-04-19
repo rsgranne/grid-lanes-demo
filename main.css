@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+select {
+  font: inherit;
+  padding: 6px 10px;
+}
+
+.gallery-wrap {
+  max-width: 100%;
+}
+
+.gallery {
+  width: min(1200px, 100%);
+}
+
+/* Shared item styling */
+
+.gallery > figure {
+  position: relative;
+  margin: 0 0 16px;
+  break-inside: avoid;
+}
+
+.gallery > figure > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.gallery > figure > span:first-child {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  min-width: 2.2rem;
+  padding: 0.35rem 0.55rem;
+  background: hsl(0 0% 35% / 0.85);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  border-radius: 999px;
+}
+
+/* 1. Standard grid */
+
+.gallery.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.gallery.grid figure {
+  margin: 0;
+}
+
+.gallery.grid img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: top;
+}
+
+/* 2. Multi-column */
+
+.gallery.multicol {
+  columns: 4 200px;
+  column-gap: 16px;
+}
+
+.gallery.multicol figure {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 16px;
+  break-inside: avoid;
+}
+
+/* 3. Grid Lanes – columns */
+
+.gallery.lanes-columns {
+  display: grid-lanes;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gallery.lanes-columns figure {
+  margin: 0;
+}
+
+/* 4. Grid Lanes – alternating narrow/wide columns */
+
+.gallery.lanes-alt {
+  display: grid-lanes;
+  grid-template-columns: 0.75fr 1.35fr 0.75fr 1.35fr;
+  gap: 16px;
+}
+
+.gallery.lanes-alt figure {
+  margin: 0;
+}
+
+/* 5. Grid Lanes – horizontal / brick layout */
+
+.gallery-wrap:has(.gallery.lanes-rows),
+.gallery-wrap:has(.gallery.lanes-rows-wide) {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.gallery.lanes-rows,
+.gallery.lanes-rows-wide {
+  display: grid-lanes;
+  width: max-content;
+  max-width: none;
+  grid-template-rows: repeat(3, 150px);
+  gap: 16px;
+  align-content: start;
+}
+
+.gallery.lanes-rows > figure,
+.gallery.lanes-rows-wide > figure {
+  margin: 0;
+}
+
+.gallery.lanes-rows > figure > img,
+.gallery.lanes-rows-wide > figure > img {
+  display: block;
+  width: auto;
+  height: 150px;
+  max-width: none;
+}
+
+/* uninteresting stuff below here */
+html {
+  font-size: 24px;
+  font-family: "Iowan Old Style", Georgia, serif;
+}
+
+.browser-note {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  background: hsl(50 100% 90%);
+  border: 1px solid hsl(45 85% 70%);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+}
