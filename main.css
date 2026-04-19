@@ -223,6 +223,10 @@ html {
     max-width: 100%;
   }
 
+  .gallery > figure {
+    margin-bottom: 1em;
+  }
+
   .gallery-wrap:has(.gallery.lanes-rows),
   .gallery-wrap:has(.gallery.lanes-rows-wide) {
     overflow-x: visible;
