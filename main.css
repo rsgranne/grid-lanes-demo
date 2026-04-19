@@ -1,194 +1,201 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 20px;
-  font-family: system-ui, sans-serif;
-}
-
-.controls {
-  margin-bottom: 20px;
-}
-
-label {
-  font-weight: 600;
-  margin-right: 10px;
-}
-
-select {
-  font: inherit;
-  padding: 6px 10px;
-}
-
-/* Key CSS lines shown under the layout picker */
-
-.key-css {
-  margin: 12px 0 0;
-  padding: 10px 14px;
-  background: hsl(220 15% 95%);
-  border: 1px solid hsl(220 10% 82%);
-  border-radius: 6px;
-  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  white-space: pre;
-}
-
-.key-css-note {
-  margin: 6px 0 0;
-  font-size: 0.85rem;
-  font-style: italic;
-  color: hsl(220 10% 45%);
+	margin: 0;
+	padding: 20px;
 }
 
 .gallery-wrap {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 .gallery {
-  width: min(1200px, 100%);
+	width: min(1200px, 100%);
 }
 
 /* Shared item styling */
 
 .gallery > figure {
-  position: relative;
-  margin: 0 0 16px;
-  break-inside: avoid;
+	position: relative;
+	margin: 0 0 16px;
+	break-inside: avoid;
 }
 
 .gallery > figure > img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.gallery > figure > span:first-child {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
-  min-width: 2.2rem;
-  padding: 0.35rem 0.55rem;
-  background: hsl(0 0% 35% / 0.85);
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1;
-  text-align: center;
-  border-radius: 999px;
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 /* 1. Standard grid */
 
 .gallery.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  align-items: start;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	align-items: start;
 }
 
 .gallery.grid figure {
-  margin: 0;
+	margin: 0;
 }
 
 /* 2. Multi-column */
 
 .gallery.multicol {
-  columns: 4 200px;
-  column-gap: 16px;
+	columns: 4 200px;
+	column-gap: 16px;
 }
 
 .gallery.multicol figure {
-  display: inline-block;
-  width: 100%;
-  margin: 0 0 16px;
-  break-inside: avoid;
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 16px;
+	break-inside: avoid;
 }
 
 /* 3. Grid Lanes – columns */
 
 .gallery.lanes-columns {
-  display: grid-lanes;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+	display: grid-lanes;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
 }
 
 .gallery.lanes-columns figure {
-  margin: 0;
+	margin: 0;
 }
 
 /* 4. Grid Lanes – alternating narrow/wide columns */
 
 .gallery.lanes-alt {
-  display: grid-lanes;
-  grid-template-columns: 0.75fr 1.35fr 0.75fr 1.35fr;
-  gap: 16px;
+	display: grid-lanes;
+	grid-template-columns: 0.75fr 1.35fr 0.75fr 1.35fr;
+	gap: 16px;
 }
 
 .gallery.lanes-alt figure {
-  margin: 0;
+	margin: 0;
 }
 
 /* 5. Grid Lanes – horizontal */
 
 .gallery-wrap:has(.gallery.lanes-rows),
 .gallery-wrap:has(.gallery.lanes-rows-wide) {
-  overflow-x: auto;
-  overflow-y: hidden;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 .gallery.lanes-rows,
 .gallery.lanes-rows-wide {
-  display: grid-lanes;
-  width: max-content;
-  max-width: none;
-  grid-template-rows: repeat(3, 150px);
-  gap: 16px;
-  align-content: start;
+	display: grid-lanes;
+	width: max-content;
+	max-width: none;
+	grid-template-rows: repeat(3, 150px);
+	gap: 16px;
+	align-content: start;
 }
 
 .gallery.lanes-rows > figure,
 .gallery.lanes-rows-wide > figure {
-  margin: 0;
+	margin: 0;
 }
 
 .gallery.lanes-rows > figure > img,
 .gallery.lanes-rows-wide > figure > img {
-  display: block;
-  width: auto;
-  height: 150px;
-  max-width: none;
+	display: block;
+	width: auto;
+	height: 150px;
+	max-width: none;
 }
 
 /* uninteresting stuff below here */
+
 html {
-  font-size: 24px;
-  font-family: "Iowan Old Style", Georgia, serif;
+	font-size: 24px;
+	font-family: "Iowan Old Style", Georgia, serif;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+}
+
+.controls {
+	margin-bottom: 20px;
+}
+
+label {
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+select {
+	font: inherit;
+	padding: 6px 10px;
+}
+
+/* Key CSS lines shown under the layout picker */
+
+.key-css {
+	margin: 12px 0 0;
+	padding: 10px 14px;
+	background: hsl(220 15% 95%);
+	border: 1px solid hsl(220 10% 82%);
+	border-radius: 6px;
+	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+	font-size: 0.85rem;
+	line-height: 1.5;
+	white-space: pre;
+}
+
+.key-css-note {
+	margin: 6px 0 0;
+	font-size: 0.85rem;
+	font-style: italic;
+	color: hsl(220 10% 45%);
+}
+
+.gallery > figure > img {
+	border-radius: 8px;
+}
+
+.gallery > figure > span:first-child {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+	min-width: 2.2rem;
+	padding: 0.35rem 0.55rem;
+	background: hsl(0 0% 35% / 0.85);
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	border-radius: 999px;
 }
 
 .browser-note {
-  margin: 0 0 16px;
-  padding: 10px 12px;
-  background: hsl(50 100% 90%);
-  border: 1px solid hsl(45 85% 70%);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 400;
+	margin: 0 0 16px;
+	padding: 10px 12px;
+	background: hsl(50 100% 90%);
+	border: 1px solid hsl(45 85% 70%);
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 400;
 }
 
 .narrow-note {
-  display: none;
-  margin: 0 0 16px;
-  padding: 10px 12px;
-  background: hsl(210 60% 92%);
-  border: 1px solid hsl(210 50% 75%);
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 400;
+	display: none;
+	margin: 0 0 16px;
+	padding: 10px 12px;
+	background: hsl(210 60% 92%);
+	border: 1px solid hsl(210 50% 75%);
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 400;
 }
 
 /*
@@ -200,47 +207,47 @@ html {
 */
 
 @media (width < 992px) {
-  .narrow-note {
-    display: block;
-  }
+	.narrow-note {
+		display: block;
+	}
 
-  select {
-    max-width: 100%;
-  }
+	select {
+		max-width: 100%;
+	}
 
-  .gallery.grid,
-  .gallery.multicol,
-  .gallery.lanes-columns,
-  .gallery.lanes-alt,
-  .gallery.lanes-rows,
-  .gallery.lanes-rows-wide {
-    display: block;
-    columns: unset;
-    grid-template-columns: unset;
-    grid-template-rows: unset;
-    width: 100%;
-    max-width: 100%;
-  }
+	.gallery.grid,
+	.gallery.multicol,
+	.gallery.lanes-columns,
+	.gallery.lanes-alt,
+	.gallery.lanes-rows,
+	.gallery.lanes-rows-wide {
+		display: block;
+		columns: unset;
+		grid-template-columns: unset;
+		grid-template-rows: unset;
+		width: 100%;
+		max-width: 100%;
+	}
 
-  .gallery.grid figure,
-  .gallery.multicol figure,
-  .gallery.lanes-columns figure,
-  .gallery.lanes-alt figure,
-  .gallery.lanes-rows > figure,
-  .gallery.lanes-rows-wide > figure {
-    margin-bottom: 1em;
-  }
+	.gallery.grid figure,
+	.gallery.multicol figure,
+	.gallery.lanes-columns figure,
+	.gallery.lanes-alt figure,
+	.gallery.lanes-rows > figure,
+	.gallery.lanes-rows-wide > figure {
+		margin-bottom: 1em;
+	}
 
-  .gallery-wrap:has(.gallery.lanes-rows),
-  .gallery-wrap:has(.gallery.lanes-rows-wide) {
-    overflow-x: visible;
-    overflow-y: visible;
-  }
+	.gallery-wrap:has(.gallery.lanes-rows),
+	.gallery-wrap:has(.gallery.lanes-rows-wide) {
+		overflow-x: visible;
+		overflow-y: visible;
+	}
 
-  .gallery.lanes-rows > figure > img,
-  .gallery.lanes-rows-wide > figure > img {
-    width: 100%;
-    height: auto;
-    max-width: none;
-  }
+	.gallery.lanes-rows > figure > img,
+	.gallery.lanes-rows-wide > figure > img {
+		width: 100%;
+		height: auto;
+		max-width: none;
+	}
 }
