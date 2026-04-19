@@ -200,7 +200,7 @@ html {
   on narrow screens.
 */
 
-@media (width < 62rem) {
+@media (width < 992px) {
   .narrow-note {
     display: block;
   }
