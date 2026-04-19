@@ -95,7 +95,6 @@ select {
   margin: 0;
 }
 
-
 /* 2. Multi-column */
 
 .gallery.multicol {
@@ -134,7 +133,7 @@ select {
   margin: 0;
 }
 
-/* 5. Grid Lanes – horizontal / brick layout */
+/* 5. Grid Lanes – horizontal */
 
 .gallery-wrap:has(.gallery.lanes-rows),
 .gallery-wrap:has(.gallery.lanes-rows-wide) {
