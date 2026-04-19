@@ -56,7 +56,6 @@ If the current browser does not support Grid Lanes, those options are disabled.
 
 ## Notes
 
-- This project uses normal HTML5 void elements, not XHTML-style self-closing syntax.
 - The code is intentionally structured for teaching clarity, not just terseness.
 - Some longhand CSS is used on purpose because it is easier for students to understand.
 
