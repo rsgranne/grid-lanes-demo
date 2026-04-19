@@ -132,7 +132,7 @@ overflow-x: auto;`
     */
     const controls = document.querySelector(".controls");
     let noteEl = controls.querySelector(".key-css-note");
-    const noteText = keyCSSNotes[mode];
+    const noteText = narrowQuery.matches ? null : keyCSSNotes[mode];
 
     if (noteText) {
       if (!noteEl) {
