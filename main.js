@@ -97,6 +97,7 @@ overflow-x: auto;`
     Most modes do not need a note, so only the ones that do are listed here.
   */
   const keyCSSNotes = {
+    "grid": "Each row is as tall as its tallest image, so shorter images leave empty space below them.",
     "lanes-rows": "These images are tall & narrow, so they look cramped at this height. Compare with the next option to see how image proportions affect the layout.",
     "lanes-rows-wide": "These images come from a second set with wider proportions"
   };
