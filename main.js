@@ -97,6 +97,7 @@ overflow-x: auto;`
     Most modes do not need a note, so only the ones that do are listed here.
   */
   const keyCSSNotes = {
+    "lanes-rows": "These images are tall & narrow, so they look cramped at this height. Compare with the next option to see how image proportions affect the layout.",
     "lanes-rows-wide": "Uses a second image set with wider proportions"
   };
 
