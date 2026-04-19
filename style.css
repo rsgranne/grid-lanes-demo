@@ -43,7 +43,7 @@
 
 .gallery.lanes-alt {
 	display: grid-lanes;
-	grid-template-columns: 0.75fr 1.35fr 0.75fr 1.35fr;
+	grid-template-columns: repeat(2, 0.75fr 1.35fr);
 	gap: 16px;
 }
 

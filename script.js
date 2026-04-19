@@ -78,7 +78,7 @@ grid-template-columns: repeat(4, 1fr);`,
 
     "lanes-alt":
 `display: grid-lanes;
-grid-template-columns: 0.75fr 1.35fr 0.75fr 1.35fr;`,
+grid-template-columns: repeat(2, 0.75fr 1.35fr);`,
 
     "lanes-rows":
 `display: grid-lanes;
