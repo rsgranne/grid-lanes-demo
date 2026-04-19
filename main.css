@@ -111,6 +111,52 @@ body {
 	max-width: none;
 }
 
+/*
+  Narrow-screen overrides (below Bootstrap "large" breakpoint)
+
+  Below 992px, all layouts collapse to a single full-width column.
+  This is intentional: multi-column layouts do not make sense
+  on narrow screens.
+*/
+
+@media (width < 992px) {
+	.gallery.grid,
+	.gallery.multicol,
+	.gallery.lanes-columns,
+	.gallery.lanes-alt,
+	.gallery.lanes-rows,
+	.gallery.lanes-rows-wide {
+		display: block;
+		columns: unset;
+		grid-template-columns: unset;
+		grid-template-rows: unset;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.gallery.grid figure,
+	.gallery.multicol figure,
+	.gallery.lanes-columns figure,
+	.gallery.lanes-alt figure,
+	.gallery.lanes-rows > figure,
+	.gallery.lanes-rows-wide > figure {
+		margin-bottom: 1em;
+	}
+
+	.gallery-wrap:has(.gallery.lanes-rows),
+	.gallery-wrap:has(.gallery.lanes-rows-wide) {
+		overflow-x: visible;
+		overflow-y: visible;
+	}
+
+	.gallery.lanes-rows > figure > img,
+	.gallery.lanes-rows-wide > figure > img {
+		width: 100%;
+		height: auto;
+		max-width: none;
+	}
+}
+
 /* uninteresting stuff below here */
 
 html {
@@ -198,14 +244,6 @@ select {
 	font-weight: 400;
 }
 
-/*
-  Narrow-screen overrides (below Bootstrap "large" breakpoint)
-
-  Below 992px, all layouts collapse to a single full-width column.
-  This is intentional: multi-column layouts do not make sense
-  on narrow screens.
-*/
-
 @media (width < 992px) {
 	.narrow-note {
 		display: block;
@@ -213,41 +251,5 @@ select {
 
 	select {
 		max-width: 100%;
-	}
-
-	.gallery.grid,
-	.gallery.multicol,
-	.gallery.lanes-columns,
-	.gallery.lanes-alt,
-	.gallery.lanes-rows,
-	.gallery.lanes-rows-wide {
-		display: block;
-		columns: unset;
-		grid-template-columns: unset;
-		grid-template-rows: unset;
-		width: 100%;
-		max-width: 100%;
-	}
-
-	.gallery.grid figure,
-	.gallery.multicol figure,
-	.gallery.lanes-columns figure,
-	.gallery.lanes-alt figure,
-	.gallery.lanes-rows > figure,
-	.gallery.lanes-rows-wide > figure {
-		margin-bottom: 1em;
-	}
-
-	.gallery-wrap:has(.gallery.lanes-rows),
-	.gallery-wrap:has(.gallery.lanes-rows-wide) {
-		overflow-x: visible;
-		overflow-y: visible;
-	}
-
-	.gallery.lanes-rows > figure > img,
-	.gallery.lanes-rows-wide > figure > img {
-		width: 100%;
-		height: auto;
-		max-width: none;
 	}
 }
