@@ -180,3 +180,59 @@ html {
   font-size: 1rem;
   font-weight: 400;
 }
+
+.narrow-note {
+  display: none;
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  background: hsl(210 60% 92%);
+  border: 1px solid hsl(210 50% 75%);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/*
+  Narrow-screen overrides (below Bootstrap "large" breakpoint)
+
+  Below 992px, all layouts collapse to a single full-width column.
+  This is intentional: multi-column layouts do not make sense
+  on narrow screens.
+*/
+
+@media (width < 62rem) {
+  .narrow-note {
+    display: block;
+  }
+
+  select {
+    max-width: 100%;
+  }
+
+  .gallery.grid,
+  .gallery.multicol,
+  .gallery.lanes-columns,
+  .gallery.lanes-alt,
+  .gallery.lanes-rows,
+  .gallery.lanes-rows-wide {
+    display: block;
+    columns: unset;
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .gallery-wrap:has(.gallery.lanes-rows),
+  .gallery-wrap:has(.gallery.lanes-rows-wide) {
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+
+  .gallery.lanes-rows > figure > img,
+  .gallery.lanes-rows-wide > figure > img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+}
