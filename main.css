@@ -223,7 +223,12 @@ html {
     max-width: 100%;
   }
 
-  .gallery > figure {
+  .gallery.grid figure,
+  .gallery.multicol figure,
+  .gallery.lanes-columns figure,
+  .gallery.lanes-alt figure,
+  .gallery.lanes-rows > figure,
+  .gallery.lanes-rows-wide > figure {
     margin-bottom: 1em;
   }
 
