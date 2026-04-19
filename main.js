@@ -98,7 +98,7 @@ overflow-x: auto;`
   */
   const keyCSSNotes = {
     "lanes-rows": "These images are tall & narrow, so they look cramped at this height. Compare with the next option to see how image proportions affect the layout.",
-    "lanes-rows-wide": "Uses a second image set with wider proportions"
+    "lanes-rows-wide": "These images come from a second set with wider proportions"
   };
 
   /*
