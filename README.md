@@ -1,4 +1,4 @@
-# CSS Layout Comparison Demo
+# CSS Masonry-Style Layouts
 
 An interactive classroom demo for comparing CSS Grid, Multi-column layout, and CSS Grid Lanes with switchable layouts, browser support detection, and teaching-focused CSS snippets.
 
@@ -36,7 +36,9 @@ The goals are to:
 - Browser support detection for CSS Grid Lanes
 - Automatic disabling of unsupported Grid Lanes options
 - Short teaching-focused CSS snippets shown for the selected layout
+- Explanatory notes under each layout describing what it does and why it looks the way it does
 - Alternate image set for the wider Horizontal mode
+- Narrow-screen fallback that collapses all layouts to single-column full-width with an explanatory note
 
 ## Browser support
 
@@ -49,8 +51,8 @@ If the current browser does not support Grid Lanes, those options are disabled.
 ## Project structure
 
 - `index.html`
-- `style.css`
-- `script.js`
+- `main.css`
+- `main.js`
 
 ## Notes
 
