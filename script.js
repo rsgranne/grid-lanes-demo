@@ -12,17 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // The main gallery container whose class changes when a new layout is selected
   const gallery = document.querySelector(".gallery");
 
-  /*
-    The note that JavaScript updates with browser support information.
-
-    We first look for .support-note.
-    If that is not present, we fall back to .browser-note.
-
-    The || means “if the thing on the left is missing, use the thing on the right.”
-  */
-  const browserNote =
-    document.querySelector(".support-note") ||
-    document.querySelector(".browser-note");
+  // The note that JavaScript updates with browser support information
+  const browserNote = document.querySelector(“.browser-note”);
 
   /*
     Get all the images inside the gallery.
@@ -102,7 +93,7 @@ overflow-x: auto;`
     "lanes-columns": "Like multi-column, but images pack tightly without the empty space that Grid creates.",
     "lanes-alt": "Alternating narrow & wide columns add visual variety while still packing tightly.",
     "lanes-rows": "These images are tall & narrow, so they look cramped at this height. Compare with the next option to see how image proportions affect the layout.",
-    "lanes-rows-wide": "These images come from a second set with wider proportions"
+    "lanes-rows-wide": "These images come from a second set with wider proportions."
   };
 
   /*
