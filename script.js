@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.querySelector(".gallery");
 
   // The note that JavaScript updates with browser support information
-  const browserNote = document.querySelector(“.browser-note”);
+  const browserNote = document.querySelector(".browser-note");
 
   /*
     Get all the images inside the gallery.
